@@ -32,6 +32,7 @@ export default function Home() {
                 <Link href="/categories">
                   <Button variant="outline" size="lg">
                     Browse Categories
+                    <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>

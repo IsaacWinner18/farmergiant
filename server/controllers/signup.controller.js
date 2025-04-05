@@ -17,7 +17,6 @@ console.log(req.body)
         if (existingUser) {
             return res.status(409).json({
                 message: "User exist already",
-                user: existingUser,
             });
         }
       

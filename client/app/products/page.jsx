@@ -17,13 +17,16 @@ export default function ProductsPage() {
     const [authen, setAuthen] = useState(false);
 
     const getAuthen = async () => {
-      const response = await fetch("http://localhost:5000/auth/status", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URI}/auth/status`,
+        {
+          method: "GET",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await response.json();
       setAuthen(data.authenticated);
       console.log(data.authenticated);

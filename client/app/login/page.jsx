@@ -40,14 +40,17 @@ export default function LoginPage() {
     setLoading(true);
   
     try {
-      const response = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        credentials: "include",
-        body: JSON.stringify(formData)
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URI}/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) { 

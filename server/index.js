@@ -7,10 +7,12 @@ const app = express();
 const cookieParser = require("cookie-parser");
 app.use(express.json())
 
-// app.use(cors({
+// app.use(
+//   cors({
 //     origin: "*",
-//     credentials: true
-// }))
+//     credentials: true,
+//   })
+// );
 
 app.use(
   cors({
@@ -24,7 +26,7 @@ app.use(userRoutes);
 
 app.listen(5000, async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/farmergiant")
+      await mongoose.connect(`${process.env.MONGODB_URI}`);
 console.log("Server running on port 5000")
     } catch (err) {
         console.log("couldn't connect to server", err)

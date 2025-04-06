@@ -8,6 +8,7 @@ import Link from "next/link";
 
 export default function Headers() {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [logOutToggle, setLogOutToggle] = useState(false);
   const [authen, setAuthen] = useState(false)
 
   const getAuthen = async () => {
@@ -29,10 +30,30 @@ export default function Headers() {
     getAuthen()
   }, [])
 
+  const getLogOut = async () => {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URI}/auth/logout`,
+      {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+  };
+
   const handleMenuToggle = () => {
     const newToggle = !toggleMenu;
     setToggleMenu(newToggle);
   };
+
+    const handleLogOutToggle = () => {
+      const newToggle = !logOutToggle;
+      setLogOutToggle(newToggle);
+    };
+
   return (
     <div className="pb-6">
       <div className="fixed w-full z-50 backdrop-blur-2xl top-0 flex justify-between py-1 bg-neutral-900/50">
@@ -86,7 +107,21 @@ export default function Headers() {
           )}
 
           {authen ? (
-            <User className="h-5 w-5 mx-2" />
+            <div>
+              <User
+                onClick={() => {
+                  handleLogOutToggle();
+                }}
+                className="h-5 w-5 mx-2"
+              />
+              <div
+                className={`${logOutToggle ? "flex" : "hidden"} absolute right-2 top-12 bg-neutral-900 rounded-md p-2 w-20 text-center`}
+              >
+                <button onClick={async () => { await getLogOut(), window.location.href = "/" }} className="text-sm text-red-300">
+                  Log Out
+                </button>
+              </div>
+            </div>
           ) : (
             <div className="mx-2 md:space-x-2">
               <button className=" hidden md:inline-flex px-4 py-2 bg-purple-700/80 text-white text-sm rounded-md hover:bg-purple-500/80 ">

@@ -199,7 +199,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-20 ">
+      <section className="w-full py-12 md:py-20">
         <div className=" px-4 md:px-6">
           <div className="flex flex-col justify-between items-center">
             <h2 className="text-2xl mb-3 font-bold tracking-tighter md:text-3xl lg:text-4xl text-primary">

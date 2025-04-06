@@ -41,7 +41,11 @@ export default function Headers() {
         },
       }
     );
-    const data = await response.json();
+    if (response.ok) {
+      window.location.href = "/";
+    } else {
+      console.error("Logout failed", await res.message.json());
+    }
   };
 
   const handleMenuToggle = () => {
@@ -117,7 +121,7 @@ export default function Headers() {
               <div
                 className={`${logOutToggle ? "flex" : "hidden"} absolute right-2 top-12 bg-neutral-900 rounded-md p-2 w-20 text-center`}
               >
-                <button onClick={async () => { await getLogOut(), window.location.href = "/" }} className="text-sm text-red-300">
+                <button onClick={ getLogOut } className="text-sm text-red-300">
                   Log Out
                 </button>
               </div>

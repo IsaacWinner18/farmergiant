@@ -23,7 +23,6 @@ export default function Headers() {
     );
     const data = await response.json()
     setAuthen(data.authenticated)
-console.log(data.authenticated);  
   }
 
   useEffect(() => {
@@ -33,7 +32,6 @@ console.log(data.authenticated);
   const handleMenuToggle = () => {
     const newToggle = !toggleMenu;
     setToggleMenu(newToggle);
-    console.log(newToggle);
   };
   return (
     <div className="pb-6">
@@ -87,20 +85,21 @@ console.log(data.authenticated);
             <p></p>
           )}
 
-          {authen ? (<User className="h-5 w-5 mx-2" />) : 
-            
-          (<div className="mx-2 md:space-x-2">
-            <button className=" hidden md:inline-flex px-4 py-2 bg-green-700/80 text-white text-sm rounded-md hover:bg-neutral-500/80 ">
-              <Link href="/signup">Sign up</Link>
-            </button>
-            <button
-              onClick={getAuthen}
-              className="md:inline-flex px-4 py-2 bg-green-700/80 text-white text-sm rounded-md hover:bg-neutral-500/80 "
-            >
-              <Link href="/login">Login</Link>
-            </button>
-          </div>)
-          }
+          {authen ? (
+            <User className="h-5 w-5 mx-2" />
+          ) : (
+            <div className="mx-2 md:space-x-2">
+              <button className=" hidden md:inline-flex px-4 py-2 bg-purple-700/80 text-white text-sm rounded-md hover:bg-purple-500/80 ">
+                <Link href="/signup">Sign up</Link>
+              </button>
+              <button
+                onClick={getAuthen}
+                className="md:inline-flex px-4 py-2 bg-purple-700/80 text-white text-sm rounded-md hover:bg-purple-500/80 "
+              >
+                <Link href="/login">Login</Link>
+              </button>
+            </div>
+          )}
         </div>
 
         <MenuSlide

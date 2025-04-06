@@ -3,7 +3,7 @@ const userModel = require("../models/users.model")
 
 const signUpController = async (req, res) => {
     const { name, email, password, confirmPassword } = req.body;
-console.log(req.body)
+// console.log(req.body)
   
     try {
         if (!name || !email || !password || !confirmPassword) {

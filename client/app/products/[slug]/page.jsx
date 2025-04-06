@@ -296,14 +296,14 @@ export default function ProductPage({ params }) {
 
               <div className="flex items-center space-x-4">
                 <div className="flex items-center border rounded-md">
-                  <button onClick={handleMinus} className="rounded-tl-[8px] rounded-bl-[8px] py-3 px-1 hover:bg-green-800">
+                  <button onClick={handleMinus} className="rounded-tl-[8px] rounded-bl-[8px] py-3 px-1 hover:bg-purple-800">
                     <Minus className="h-4 w-4" />
                     <span className="sr-only">Decrease quantity</span>
                   </button>
                   <div className="px-4 py-2">{stockCount}</div>
                   <button
                     onClick={handlePlus}
-                    className="rounded-tr-[8px] rounded-br-[8px] py-3 px-1 hover:bg-green-800"
+                    className="rounded-tr-[8px] rounded-br-[8px] py-3 px-1 hover:bg-purple-800"
                   >
                     <Plus className="h-4 w-4" />
                     <span className="sr-only">Increase quantity</span>
@@ -317,7 +317,7 @@ export default function ProductPage({ params }) {
 
               <div className="text-sm text-muted-foreground">
                 {product.stock > 0 ? (
-                  <span className="text-green-600 font-medium">
+                  <span className="text-purple-600 font-medium">
                     In Stock ({product.stock} available)
                   </span>
                 ) : (

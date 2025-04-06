@@ -27,6 +27,7 @@ const loginController = async (req, res) => {
                   sameSite: "none",
                   maxAge: 32 * 24 * 60 * 60 * 1000,
                 });
+              console.log("Login Successful")
                 return res.status(200).json({ message: "Login successful!" });
 
             } else {

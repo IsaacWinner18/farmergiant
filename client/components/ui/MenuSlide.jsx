@@ -20,7 +20,6 @@ export default function MenuSlide({ toggleMenu, onClose }) {
     );
     const data = await response.json()
     setAuthen(data.authenticated)
-  console.log(data.authenticated);  
   }
   
   useEffect(() => {
@@ -41,7 +40,7 @@ const [authen, setAuthen] = useState(false);
             </p>
           </div>
           <ul className="ml-6" onClick={onClose}>
-            <li className="p-2 hover:bg-gray-600 rounded-md">
+            <li className="p-2 hover:bg-purple-950 rounded-md">
               {" "}
               <Link
                 href="/"
@@ -50,7 +49,7 @@ const [authen, setAuthen] = useState(false);
                 Home
               </Link>
             </li>
-            <li className="p-2 hover:bg-gray-600 rounded-md">
+            <li className="p-2 hover:bg-purple-950 rounded-md">
               <Link
                 href="/products"
                 className="font-medium transition-colors hover:text-primary"
@@ -58,7 +57,7 @@ const [authen, setAuthen] = useState(false);
                 All Products
               </Link>
             </li>
-            <li className="p-2 hover:bg-gray-600 rounded-md">
+            <li className="p-2 hover:bg-purple-950 rounded-md">
               <Link
                 href="/categories"
                 className="font-medium transition-colors hover:text-primary"
@@ -66,7 +65,7 @@ const [authen, setAuthen] = useState(false);
                 Categories
               </Link>
             </li>
-            <li className="p-2 hover:bg-gray-600 rounded-md">
+            <li className="p-2 hover:bg-purple-950 rounded-md">
               <Link
                 href="/about"
                 className="font-medium transition-colors hover:text-primary"
@@ -83,16 +82,18 @@ const [authen, setAuthen] = useState(false);
               </Link> */}
             </li>
 
-            { authen ? (<p></p>) : (<div className="flex gap-2 my-2">
-              <li className="p-2 bg-green-700 hover:bg-green-400 rounded-md">
-                <Link href="/signup">Sign up</Link>
-              </li>
-              <li className="p-2 bg-green-700 hover:bg-green-400 rounded-md">
-                <Link href="/login">Login</Link>
-              </li>
-            </div>)
-            }
-            
+            {authen ? (
+              <p></p>
+            ) : (
+              <div className="flex gap-2 my-2">
+                <li className="p-2 bg-purple-700/80 hover:bg-purple-400/80 rounded-md">
+                  <Link href="/signup">Sign up</Link>
+                </li>
+                <li className="p-2 bg-purple-700/80 hover:bg-purple-400/80 rounded-md">
+                  <Link href="/login">Login</Link>
+                </li>
+              </div>
+            )}
           </ul>
         </div>
       </div>

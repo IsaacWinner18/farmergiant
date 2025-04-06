@@ -60,8 +60,7 @@ export default function Home() {
       description:
         "Efficient automatic feeding system with 50kg capacity. Reduces waste and labor costs.",
       price: 299.99,
-      image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+      image: "/grinder-one.png",
     },
     {
       id: 2,
@@ -70,8 +69,7 @@ export default function Home() {
       description:
         "Complete watering system with leak-proof nipples. Easy to install and maintain.",
       price: 189.99,
-      image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+      image: "/grinder-two.png",
     },
     {
       id: 3,
@@ -80,8 +78,7 @@ export default function Home() {
       description:
         "Fully automatic digital incubator with capacity for 56 eggs. Precise temperature and humidity control.",
       price: 349.99,
-      image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+      image: "/grinder-three.png",
     },
     {
       id: 4,
@@ -91,7 +88,7 @@ export default function Home() {
         "Infrared heat lamp for chicks and poultry. Adjustable height and energy efficient.",
       price: 79.99,
       image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+        "/grinder-four.png",
     },
   ];
 
@@ -160,7 +157,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    
 
       <section className="w-full py-12 md:py-20 ">
         <div className=" px-4 md:px-6">
@@ -226,7 +222,7 @@ export default function Home() {
                           alt={product.name}
                           width={200}
                           height={200}
-                          className="aspect-square w-full object-cover object-center rounded-tr-[18px] rounded-tl-[18px]"
+                          className="aspect-square w-full object-contain object-center rounded-tr-[18px] rounded-tl-[18px]"
                         />
                       </div>
                       <div className="p-4">
@@ -244,7 +240,7 @@ export default function Home() {
                             <button
                               variant="default"
                               size="sm"
-                              className="flex items-center gap-2 border border-gray-200 bg-green-100 text-green-900 px-4 py-2 rounded-full hover:bg-green-300 transition duration-200"
+                              className="flex items-center gap-2 border border-gray-200 bg-purple-100 text-purple-900 px-4 py-2 rounded-full hover:bg-purple-300 transition duration-200"
                             >
                               <ShoppingCart className=" h-4 w-4" />
                               Add to Cart
@@ -277,7 +273,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
                 Why Choose Us
               </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="opacity-90 max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 We&apos;re dedicated to providing the best poultry equipment for
                 your farm
               </p>
@@ -289,7 +285,7 @@ export default function Home() {
                 key={index}
                 className="flex flex-col items-center text-center"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 text-white">
                   {feature.icon}
                 </div>
                 <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
@@ -313,18 +309,24 @@ export default function Home() {
               {
                 name: "John Smith",
                 role: "Poultry Farmer",
+                image:
+                  "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742128152/john_doe_agmcuj.jpg",
                 quote:
                   "Poultry Pro's equipment has significantly improved our farm's productivity. Their customer service is unmatched!",
               },
               {
                 name: "Emily Johnson",
                 role: "Farm Manager",
+                image:
+                  "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1743250166/Asset-1-1_ook8oc.png",
                 quote:
                   "The quality and reliability of their products are exceptional. I highly recommend Poultry Pro to any serious farmer.",
               },
               {
                 name: "Michael Brown",
                 role: "Agricultural Consultant",
+                image:
+                  "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1743897261/johndoe_nvnfch.jpg",
                 quote:
                   "I've worked with many suppliers, but Poultry Pro stands out for their innovative solutions and expert support.",
               },
@@ -335,7 +337,7 @@ export default function Home() {
               >
                 <div className="flex items-center mb-4">
                   <Image
-                    src={`https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742128152/john_doe_agmcuj.jpg`}
+                    src={testimonial.image}
                     alt={testimonial.name}
                     width={60}
                     height={60}
@@ -367,7 +369,7 @@ export default function Home() {
           </p>
           <Link
             href="/products"
-            className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-400 transition duration-300 inline-flex items-center"
+            className="bg-purple-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-400 transition duration-300 inline-flex items-center"
           >
             Shop Now
             <svg
@@ -385,7 +387,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
 
       <Footer />
     </div>

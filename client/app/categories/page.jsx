@@ -29,6 +29,7 @@ export default function ProductsPage() {
       );
       const data = await response.json();
       setAuthen(data.authenticated);
+      console.log(data.authenticated);
     };
 
     useEffect(() => {
@@ -43,6 +44,9 @@ export default function ProductsPage() {
     });
   }
 
+  // useEffect(() => {
+  //   handleAddToCart
+  // }, [])
   
   const allProducts = [
     {
@@ -140,19 +144,20 @@ export default function ProductsPage() {
 
   return (
     <div className="mt-26 mb-10">
-      {toast.show && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast({ ...toast, show: false })}
-        />
-      )}
 
+       {toast.show && (
+              <Toast
+                message={toast.message}
+                type={toast.type}
+                onClose={() => setToast({ ...toast, show: false })}
+              />
+      )}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-4">
         {allProducts.map((product) => (
           <div key={product.id}>
             <div className="h-full overflow-hidden border border-gray-800 rounded-[12px] hover:shadow-lg">
-              <Link href={`/products/${product.slug}`}>
+              <Link href={`/products/`}>
                 <div className="aspect-square relative">
                   <Image
                     src={product.image || "/placeholder.svg"}
@@ -173,29 +178,29 @@ export default function ProductsPage() {
                 <div className="flex items-center justify-between mt-4">
                   <span className="font-bold">${product.price.toFixed(2)}</span>
 
-                  {authen ? (
+                  {/* {authen ? (
                     <button
-                      onClick={() => {
-                        addToCart(product), handleAddToCart();
-                      }}
+                      onClick={() => {addToCart(product), handleAddToCart()}}
                       // disabled={!authen}
                       size="sm"
                       variant="default"
-                      className="flex items-center gap-2 border border-gray-600 bg-purple-700 text-white px-6 py-2 rounded-full hover:bg-purple-800 transition duration-200"
+                      className="flex items-center gap-2 border border-gray-600 bg-green-100 text-green-900 px-4 py-2 rounded-full hover:bg-green-300 transition duration-200"
                     >
                       <ShoppingCart className="h-4 w-4 mr-2" />
                     </button>
                   ) : (
-                    <Link href="/login">
-                      <button
-                        size="sm"
-                        variant="default"
-                        className="flex items-center gap-2 border border-purple-600 bg-purple-700 text-white px-4 py-2 rounded-full hover:bg-purple-800 transition duration-200"
-                      >
-                        <ShoppingCart className="h-4 w-4 mr-2" /> Login to Add
-                      </button>
-                    </Link>
-                  )}
+                      <Link href="/login">
+                    <button
+                      
+                      size="sm"
+                      variant="default"
+                      className="flex items-center gap-2 border border-gray-600 bg-green-100 text-green-900 px-4 py-2 rounded-full hover:bg-green-300 transition duration-200"
+                    >
+                      <ShoppingCart className="h-4 w-4 mr-2" /> Login to Add
+                    </button>
+
+                      </Link>
+                  )} */}
                 </div>
               </div>
             </div>

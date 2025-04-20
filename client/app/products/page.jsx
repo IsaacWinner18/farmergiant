@@ -82,7 +82,7 @@ export default function ProductsPage() {
                   {product.description.length > 60 ? `${product.description.slice(0, 60)}....` : product.description }
                 </p>
                 <div className="flex items-center justify-between mt-4 text-black">
-                  <span className="font-bold">${product.price.toFixed(2)}</span>
+                  <span className="font-bold">${Number(product.price).toLocaleString()}</span>
 
                   {authen ? (
                     <button

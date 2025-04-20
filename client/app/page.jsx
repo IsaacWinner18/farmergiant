@@ -203,9 +203,8 @@ export default function Home() {
                           <div className="font-bold ">
                             <p className="text-sm text-neutral-500 line-through">
                               ₦
-                              {Number(
-                                (product.price + 10000).toFixed(2)
-                              ).toLocaleString()}
+                              {
+                                (product.price + 10000).toLocaleString()}
                             </p>
                             <p className="text-md">
                               ₦

@@ -100,7 +100,7 @@ export default function Headers() {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-0 m-3 md:mr-20 md:space-x-2">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           {authen ? (
             <Link href="/cart ">
               {" "}

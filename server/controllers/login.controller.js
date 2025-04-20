@@ -15,7 +15,7 @@ const loginController = async (req, res) => {
             if (checkUser.password === password) 
             {
                 const token = jwt.sign(
-                  { id: checkUser._id, email: checkUser.email },
+                  { id: checkUser._id, email: checkUser.email, role: checkUser.role },
                   process.env.MY_SECRET,
                   {
                     expiresIn: "32d",

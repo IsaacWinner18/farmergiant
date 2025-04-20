@@ -180,7 +180,7 @@ export default function LoginPage() {
               <div className="text-sm">
                 <Link
                   href="/forgot-password"
-                  className="font-medium text-green-600 hover:text-green-500"
+                  className="font-medium text-purple-600 hover:text-purple-500"
                 >
                   Forgot your password?
                 </Link>
@@ -191,7 +191,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? <LoadingSpinner /> : "Sign in"}
               </button>
@@ -204,7 +204,7 @@ export default function LoginPage() {
                 <div className="w-full border-t border-green-300"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-green-600 rounded-[3px]">
+                <span className="px-2 bg-purple-600 rounded-[3px]">
                   Or continue with
                 </span>
               </div>
@@ -254,7 +254,7 @@ export default function LoginPage() {
               Don't have an account?{" "}
               <Link
                 href="/signup"
-                className="font-medium text-green-500 hover:text-green-500"
+                className="font-medium text-purple-500 hover:text-purple-500"
               >
                 Sign up
               </Link>

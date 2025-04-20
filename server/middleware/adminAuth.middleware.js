@@ -12,7 +12,12 @@ const authMiddleware = async (req, res, next) => {
 
     const user = jwt.verify(token, process.env.MY_SECRET);
     req.user = user;
-    
+
+    if (user.role !== "admin") {
+      return res
+        .status(403)
+        .json({ message: "Forbidden: Admins only", authenticated: false });
+    }
     next();
   } catch (err) {
     return res

@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoutes = require("./routes/users.route")
+const productRoutes = require("./routes/products.route")
 require("dotenv").config()
 const app = express();
 const cookieParser = require("cookie-parser");
@@ -16,7 +17,8 @@ app.use(
 );
 
 app.use(cookieParser());
-app.use(userRoutes);
+app.use(userRoutes, productRoutes);
+// app.use();
 
 app.listen(5000, async () => {
     try {

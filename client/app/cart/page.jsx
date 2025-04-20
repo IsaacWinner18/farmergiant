@@ -60,7 +60,9 @@ export default function Cart() {
               <p className="text-gray-400 text-sm mb-2">
                 {item.description.substring(0, 100)}...
               </p>
-              <p className="text-lg font-bold">${item.price.toFixed(2)}</p>
+              <p className="text-lg font-bold">
+                ₦{Number(item.price.toFixed(2)).toLocaleString()}
+              </p>
             </div>
           </div>
         ))}
@@ -71,7 +73,7 @@ export default function Cart() {
         <div className="space-y-2 mb-4">
           <div className="flex justify-between">
             <span>Subtotal ({cart.length} items)</span>
-            <span>${totalPrice.toFixed(2)}</span>
+            <span>₦{Number(totalPrice.toFixed(2)).toLocaleString()}</span>
           </div>
           <div className="flex justify-between">
             <span>Shipping</span>
@@ -79,13 +81,20 @@ export default function Cart() {
           </div>
           <div className="flex justify-between">
             <span>Tax</span>
-            <span>${(totalPrice * 0.1).toFixed(2)}</span>
+            <span>
+              ₦{Number((totalPrice * 0.1).toFixed(2)).toLocaleString()}
+            </span>
           </div>
         </div>
         <div className="border-t border-gray-700 pt-4 mb-6">
           <div className="flex justify-between font-bold">
             <span>Total</span>
-            <span>${(totalPrice + totalPrice * 0.1).toFixed(2)}</span>
+            <span>
+              ₦
+              {Number(
+                (totalPrice + totalPrice * 0.1).toFixed(2)
+              ).toLocaleString()}
+            </span>
           </div>
         </div>
         <button

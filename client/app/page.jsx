@@ -1,5 +1,6 @@
+"use client"
 import Footer from "@/components/Footer";
-import Headers from "@/components/Header";
+import { useProductContext } from "@/components/productContext";
 import Button from "@/components/ui/Button";
 import {
   ChevronRight,
@@ -14,7 +15,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
 export default function Home() {
   // Sample data
   const categories = [
@@ -52,46 +52,7 @@ export default function Home() {
     },
   ];
 
-  const products = [
-    {
-      id: 1,
-      name: "Automatic Poultry Feeder",
-      slug: "automatic-poultry-feeder",
-      description:
-        "Efficient automatic feeding system with 50kg capacity. Reduces waste and labor costs.",
-      price: 299.99,
-      image: "/grinder-one.png",
-    },
-    {
-      id: 2,
-      name: "Nipple Drinking System",
-      slug: "nipple-drinking-system",
-      description:
-        "Complete watering system with leak-proof nipples. Easy to install and maintain.",
-      price: 189.99,
-      image: "/grinder-two.png",
-    },
-    {
-      id: 3,
-      name: "Digital Egg Incubator",
-      slug: "digital-egg-incubator",
-      description:
-        "Fully automatic digital incubator with capacity for 56 eggs. Precise temperature and humidity control.",
-      price: 349.99,
-      image: "/grinder-three.png",
-    },
-    {
-      id: 4,
-      name: "Poultry Heat Lamp",
-      slug: "poultry-heat-lamp",
-      description:
-        "Infrared heat lamp for chicks and poultry. Adjustable height and energy efficient.",
-      price: 79.99,
-      image:
-        "/grinder-four.png",
-    },
-  ];
-
+ 
   const features = [
     {
       icon: <Truck className="h-6 w-6" />,
@@ -116,9 +77,11 @@ export default function Home() {
     },
   ];
 
+  const { products, loading, error } = useProductContext();
+
   return (
     <div>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black">
         <div className="container px-6 md:px-16">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4">
@@ -126,7 +89,7 @@ export default function Home() {
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                   Quality Poultry Equipment for Your Farm
                 </h1>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                <p className="max-w-[600px] opacity-80 text-muted-foreground md:text-xl">
                   Professional equipment for poultry farmers. Increase
                   efficiency and improve animal welfare with our premium
                   products.
@@ -158,11 +121,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-20 ">
+      
+
+      <section className="w-full py-12 md:py-20 bg-white text-black">
         <div className=" px-4 md:px-6">
           <div className="flex flex-col justify-between items-center">
             <h2 className="text-2xl mb-3 font-bold tracking-tighter md:text-3xl lg:text-4xl text-primary">
-              Shop by Category
+              Best Selling Products
             </h2>
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-[900px] mb-3">
               Find the perfect equipment for your poultry farm
@@ -184,9 +149,9 @@ export default function Home() {
                         className=" aspect-square w-full object-cover object-center rounded-tr-[18px] rounded-tl-[18px]"
                       />
                     </div>
-                    <div className="p-4">
+                    <div className="p-4 bg-white rounded-br-[18px] rounded-bl-[18px]">
                       <h3 className="text-lg font-semibold">{category.name}</h3>
-                      <p className="text-sm text-neutral-300 opacity-90 text-muted-foreground">
+                      <p className="text-sm text-neutral-800 opacity-90 text-muted-foreground">
                         {category.description}
                       </p>
                     </div>
@@ -199,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-20">
+      <section className="w-full py-12 md:py-20 bg-neutral-300 text-black">
         <div className=" px-4 md:px-6">
           <div className="flex flex-col justify-between items-center">
             <h2 className="text-2xl mb-3 font-bold tracking-tighter md:text-3xl lg:text-4xl text-primary">
@@ -210,32 +175,43 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8 ">
             {products.map((product) => {
               return (
-                <Link key={product.id} href={`/products`}>
-                  <div className="my-3 mx-2">
-                    <div className="bg-neutral-900/50 shadow-lg border border-gray-700 rounded-[18px]">
-                      <div className="bg-neutral-200 aspect-square w-full rounded-[18px]">
+                <Link key={product._id} href={`/products`}>
+                  <div className="my-3 mx-2 ">
+                    <div className="bg-neutral-900/50 shadow-lg border border-gray-100 rounded-[18px]">
+                      <div className="bg-neutral-200 aspect-square w-full rounded-tr-[18px] rounded-tl-[18px]">
                         <Image
-                          src={product.image}
+                          src={product.imageUrl}
                           alt={product.name}
                           width={200}
                           height={200}
                           className="aspect-square w-full object-contain object-center rounded-tr-[18px] rounded-tl-[18px]"
                         />
                       </div>
-                      <div className="p-4">
+                      <div className="p-4 bg-white rounded-bl-[18px] rounded-br-[18px]">
                         <h3 className="text-lg font-semibold my-1">
                           {product.name}
                         </h3>
-                        <p className="text-sm text-neutral-300 opacity-90 ">
+                        <p className="text-sm text-neutral-800 opacity-90 ">
                           {product.description}
                         </p>
                         <div className="flex justify-between items-center mt-4">
-                          <p className="text-lg font-bold text-white">
-                            ${product.price.toFixed(2)}
-                          </p>
+                          <div className="font-bold ">
+                            <p className="text-sm text-neutral-500 line-through">
+                              ₦
+                              {Number(
+                                ((product.price + 10000).toFixed(2))
+                              ).toLocaleString()}
+                            </p>
+                            <p className="text-md">
+                              ₦
+                              {Number(
+                                product.price.toFixed(2)
+                              ).toLocaleString()}
+                            </p>
+                          </div>
                           <p className="">
                             <button
                               variant="default"
@@ -266,7 +242,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-neutral-300 text-black">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -299,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className=" py-20">
+      <section className=" py-20 bg-neutral-200">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center text-gray-400">
             What Our Customers Say
@@ -344,13 +320,13 @@ export default function Home() {
                     className="rounded-full mr-4"
                   />
                   <div>
-                    <h3 className="text-lg font-semibold text-neutral-300">
+                    <h3 className="text-lg font-semibold text-neutral-200">
                       {testimonial.name}
                     </h3>
                     <p className="text-gray-300">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-400 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-100 italic">"{testimonial.quote}"</p>
               </div>
             ))}
           </div>
@@ -358,7 +334,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gray-800/50 text-white py-20">
+      <section className="bg-gray-500 text-white py-20">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Elevate Your Poultry Farm?

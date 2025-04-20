@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() { 
     return (
-      <footer className="w-full border-t bg-muted py-12 bg-gray-900/50">
+      <footer className="w-full border-t bg-white text-black py-12 bg-gray-900/50">
         <div className="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-6">
           <div>
             <h3 className="text-lg font-semibold mb-4 text-primary">
@@ -14,7 +14,7 @@ export default function Footer() {
                 height={82}
               />
             </h3>
-            <p className="text-sm text-neutral-300">
+            <p className="text-sm text-neutral-900">
               Quality poultry equipment for farms of all sizes. Helping farmers
               improve efficiency and animal welfare since 2010.
             </p>
@@ -95,21 +95,21 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <address className="not-italic text-sm text-muted-foreground">
-              <p className="text-green-100">Farmergiant Nigeria Limited</p>
-              <p className="text-neutral-300">
+            <address className="not-italic text-sm text-black">
+              <p className="text-green-800">Farmergiant Nigeria Limited</p>
+              <p className="text-neutral-700">
                 Oluibadan Avenue, Adjacent Rehobooth Cathedral Church, Ibadan,
                 Nigeria.
               </p>
-              <p className="mt-2 text-neutral-300">
+              <p className="mt-2 text-neutral-900">
                 Email: resonnacesales@gmail.com
               </p>
-              <p className="text-neutral-300">Phone: (+234) 0909-4538-737</p>
+              <p className="text-neutral-800">Phone: (+234) 0909-4538-737</p>
             </address>
           </div>
         </div>
         <div className="container mt-8 border-t pt-8 px-4 md:px-6">
-          <p className="text-center text-sm text-neutral-300">
+          <p className="text-center text-sm text-neutral-800">
             © {new Date().getFullYear()} Farmergiant. All rights reserved.
           </p>
         </div>

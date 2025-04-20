@@ -79,10 +79,14 @@ export default function ProductsPage() {
                   <h3 className="font-semibold text-black">{product.name}</h3>
                 </Link>
                 <p className="text-sm text-neutral-800 line-clamp-2 mt-2">
-                  {product.description.length > 60 ? `${product.description.slice(0, 60)}....` : product.description }
+                  {product.description.length > 60
+                    ? `${product.description.slice(0, 60)}....`
+                    : product.description}
                 </p>
                 <div className="flex items-center justify-between mt-4 text-black">
-                  <span className="font-bold">${Number(product.price).toLocaleString()}</span>
+                  <span className="font-bold text-black">
+                    ${Number(product.price).toLocaleString()}
+                  </span>
 
                   {authen ? (
                     <button

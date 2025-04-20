@@ -20,35 +20,35 @@ export default function Home() {
   const categories = [
     {
       id: 1,
-      name: "Feeding Systems",
-      slug: "feeding-systems",
-      description: "Automatic feeders and feed storage solutions",
+      name: "Automatic Garri Fryer",
+      slug: "Garri Processing Equipment",
+      description: "Garri Processing Equipment",
       image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745173382/automatic-garri-fryer_qxmr6h.webp",
     },
     {
       id: 2,
-      name: "Watering Systems",
-      slug: "watering-systems",
-      description: "Nipple drinkers and water storage tanks",
+      name: "Chicken Cage Full galvanised",
+      slug: "Chicken Cage – Full galvanised 120b",
+      description: "Livestock and Poultry Equipment",
       image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745173382/chicken-cage_tneqze.webp",
     },
     {
       id: 3,
-      name: "Incubation Equipment",
-      slug: "incubation-equipment",
-      description: "Incubators and hatchers for all farm sizes",
+      name: "Feather Plucker",
+      slug: "Feather Plucker",
+      description: "Chicken Processing Equipment",
       image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745173382/feather-plucker_llt0sw.webp",
     },
     {
       id: 4,
-      name: "Housing & Coops",
-      slug: "housing-coops",
-      description: "Poultry houses and coop accessories",
+      name: "Automatic Bell Drinker",
+      slug: "Automatic Bell Drinker",
+      description: "Livestock and Poultry Equipment",
       image:
-        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg",
+        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745173616/livestock_ipq0hs.webp",
     },
   ];
 

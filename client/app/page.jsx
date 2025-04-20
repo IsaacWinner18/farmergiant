@@ -195,14 +195,16 @@ export default function Home() {
                           {product.name}
                         </h3>
                         <p className="text-sm text-neutral-800 opacity-90 ">
-                          {product.description}
+                          {product.description.length > 60
+                            ? `${product.description.slice(0, 60)}....`
+                            : product.description}
                         </p>
                         <div className="flex justify-between items-center mt-4">
                           <div className="font-bold ">
                             <p className="text-sm text-neutral-500 line-through">
                               ₦
                               {Number(
-                                ((product.price + 10000).toFixed(2))
+                                (product.price + 10000).toFixed(2)
                               ).toLocaleString()}
                             </p>
                             <p className="text-md">

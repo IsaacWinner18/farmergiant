@@ -7,12 +7,14 @@ export default function Footer() {
         <div className="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-6">
           <div>
             <h3 className="text-lg font-semibold mb-4 text-primary">
+              <Link href="/admin">
               <Image
                 alt="Logo"
                 src="https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742126454/photo_2025-03-16_12-57-47-removebg-preview_f3f3vv.png"
                 width={82}
                 height={82}
               />
+              </Link>
             </h3>
             <p className="text-sm text-neutral-900">
               Quality poultry equipment for farms of all sizes. Helping farmers

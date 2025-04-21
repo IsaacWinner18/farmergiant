@@ -110,18 +110,18 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <Image
-              src="https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742127817/7D8A2690_pgjwmw.jpg"
-              width={800}
-              height={550}
-              alt="Modern poultry equipment"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-            />
+            <div className="">
+              <Image
+                src="https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745257298/photo_2025-04-21_18-39-52_nb0ipv.jpg"
+                width={800}
+                height={550}
+                alt="Modern poultry equipment"
+                className="mx-auto aspect-video overflow-hidden rounded-xl md:bg-cover bg-contain object-center sm:w-full lg:order-last"
+              />
+            </div>
           </div>
         </div>
       </section>
-
-      
 
       <section className="w-full py-12 md:py-20 bg-white text-black">
         <div className=" px-4 md:px-6">
@@ -202,9 +202,7 @@ export default function Home() {
                         <div className="flex justify-between items-center mt-4">
                           <div className="font-bold ">
                             <p className="text-sm text-neutral-500 line-through">
-                              ₦
-                              {
-                                (product.price + 10000).toLocaleString()}
+                              ₦{(product.price + 10000).toLocaleString()}
                             </p>
                             <p className="text-md">
                               ₦
@@ -242,6 +240,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* <div>
+        <Image
+          src="https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745257298/photo_2025-04-21_18-39-50_ruxvsy.jpg"
+          width={800}
+          height={550}
+          alt="easter"
+          className="mx-auto aspect-video overflow-hidden rounded-xl md:bg-cover bg-contain object-center sm:w-full lg:order-last"
+        />
+      </div> */}
 
       <section className="w-full py-12 md:py-24 lg:py-32 bg-neutral-300 text-black">
         <div className="container px-4 md:px-6">

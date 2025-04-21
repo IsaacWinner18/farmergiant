@@ -122,7 +122,7 @@ if (!formData.slug.trim()) {
         throw new Error("failed to create new product");
       }
 
-      router.push("/admin");
+    window.location.href = "/admin";
     } catch (error) {
       console.error("Error creating product:", error);
     } finally {

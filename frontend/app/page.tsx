@@ -1,3 +1,6 @@
+"use client"
+import { useState, useEffect } from "react";
+import LoadingSpinner from "@/components/loading-spinner";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import MobileNav from "@/components/layout/mobile-nav";
@@ -11,6 +14,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
   const trustFeatures = [
     {
       icon: Shield,
@@ -54,6 +64,8 @@ export default function HomePage() {
       rating: 5,
     },
   ];
+
+  if (loading) return <LoadingSpinner />;
 
   return (
     <div className="min-h-screen">

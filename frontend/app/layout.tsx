@@ -14,7 +14,16 @@ export const metadata: Metadata = {
     "Your trusted partner for agricultural equipment, tractors, sprayers, earth-moving machinery, and livestock tools across Nigeria. Quality equipment, expert support, nationwide delivery.",
   keywords:
     "farm equipment, tractors, agricultural machinery, Nigeria, farming tools, sprayers, earth movers, livestock equipment",
-  generator: "v0.dev",
+  openGraph: {
+    images: [
+      {
+        url: "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742126454/photo_2025-03-16_12-57-47-removebg-preview_f3f3vv.png",
+        width: 1200,
+        height: 630,
+        alt: "FarmerGiant Logo",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

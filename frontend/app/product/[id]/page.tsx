@@ -121,7 +121,7 @@ export default function ProductDetailPage({
                 alt={product.name}
                 width={470}
                 height={470}
-                className="w-full h-96 object-cover rounded-lg"
+                className="w-full h-96 object-contain rounded-lg"
               />
               <button
                 className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:shadow-lg"

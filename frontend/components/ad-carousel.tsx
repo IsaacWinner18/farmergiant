@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function AdCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const ads = [
     {
@@ -16,7 +16,8 @@ export default function AdCarousel() {
       description: "180HP of pure power for large-scale farming operations",
       price: "₦28,500,000",
       originalPrice: "₦32,000,000",
-      image: "/placeholder.svg?height=300&width=400",
+      image:
+        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745173382/palm-degester_uc3xxo.webp",
       ctaText: "Order Now",
       ctaLink: "/product/1",
       bgGradient: "from-blue-600 to-blue-800",
@@ -27,7 +28,8 @@ export default function AdCarousel() {
       subtitle: "Harvest Season Special",
       description: "Complete your harvest faster with 40% efficiency boost",
       price: "Request Quote",
-      image: "/placeholder.svg?height=300&width=400",
+      image:
+        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745173382/automatic-garri-fryer_qxmr6h.webp",
       ctaText: "Get Quote",
       ctaLink: "/quote",
       bgGradient: "from-green-600 to-green-800",
@@ -36,28 +38,30 @@ export default function AdCarousel() {
       id: 3,
       title: "JCB Backhoe Loader",
       subtitle: "Construction & Farming",
-      description: "Versatile machine for digging, loading, and construction work",
+      description:
+        "Versatile machine for digging, loading, and construction work",
       price: "₦18,200,000",
       originalPrice: "₦20,500,000",
-      image: "/placeholder.svg?height=300&width=400",
+      image:
+        "https://res.cloudinary.com/dkfmaqtpy/image/upload/v1745173382/power-tiller_cxytw1.webp",
       ctaText: "Order Now",
       ctaLink: "/product/3",
       bgGradient: "from-orange-600 to-orange-800",
     },
-  ]
+  ];
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % ads.length)
-  }
+    setCurrentIndex((prev) => (prev + 1) % ads.length);
+  };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + ads.length) % ads.length)
-  }
+    setCurrentIndex((prev) => (prev - 1 + ads.length) % ads.length);
+  };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 6000)
-    return () => clearInterval(interval)
-  }, [])
+    const interval = setInterval(nextSlide, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative h-full">
@@ -69,25 +73,47 @@ export default function AdCarousel() {
           {ads.map((ad) => (
             <div key={ad.id} className="flex-shrink-0 w-full h-full">
               <div
-                className={`relative bg-gradient-to-br ${ad.bgGradient} text-white rounded-xl overflow-hidden h-full min-h-[400px] lg:min-h-[500px]`}
+                className={
+                  "relative text-white rounded-xl overflow-hidden h-full min-h-[400px] lg:min-h-[500px]"
+                }
               >
                 {/* Background Image */}
-                <div className="absolute inset-0 opacity-20">
-                  <Image src={ad.image || "/placeholder.svg"} alt={ad.title} fill className="object-cover" />
+                <div className="absolute inset-0">
+                  <Image
+                    src={ad.image || "/placeholder.svg"}
+                    alt={ad.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
+
+                {/* Overlay for readability */}
+                <div className="absolute inset-0 bg-black bg-opacity-30" />
 
                 {/* Content */}
                 <div className="relative z-10 p-6 lg:p-8 h-full flex flex-col justify-between">
                   <div>
-                    <div className="text-sm font-medium opacity-90 mb-2">{ad.subtitle}</div>
-                    <h3 className="text-2xl lg:text-3xl font-bold mb-4">{ad.title}</h3>
-                    <p className="text-lg opacity-90 mb-6 leading-relaxed">{ad.description}</p>
+                    <div className="text-sm font-medium opacity-90 mb-2">
+                      {ad.subtitle}
+                    </div>
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+                      {ad.title}
+                    </h3>
+                    <p className="text-lg opacity-90 mb-6 leading-relaxed">
+                      {ad.description}
+                    </p>
                   </div>
 
                   <div>
                     <div className="mb-6">
-                      <div className="text-2xl lg:text-3xl font-bold">{ad.price}</div>
-                      {ad.originalPrice && <div className="text-lg opacity-75 line-through">{ad.originalPrice}</div>}
+                      <div className="text-2xl lg:text-3xl font-bold">
+                        {ad.price}
+                      </div>
+                      {ad.originalPrice && (
+                        <div className="text-lg opacity-75 line-through">
+                          {ad.originalPrice}
+                        </div>
+                      )}
                     </div>
 
                     <Link
@@ -135,5 +161,5 @@ export default function AdCarousel() {
         ))}
       </div>
     </div>
-  )
+  );
 }

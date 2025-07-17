@@ -12,8 +12,13 @@ export default function MobileNav() {
     { href: "/products", icon: Grid3X3, label: "Categories" },
     { href: "/search", icon: Search, label: "Search" },
     { href: "/cart", icon: ShoppingCart, label: "Cart" },
-    { href: "https://wa.me/2348031234567", icon: MessageCircle, label: "WhatsApp", external: true },
-  ]
+    {
+      href: "https://wa.me/2348028686234",
+      icon: MessageCircle,
+      label: "WhatsApp",
+      external: true,
+    },
+  ];
 
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">

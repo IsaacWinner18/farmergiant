@@ -108,8 +108,8 @@ export default function NotificationSystem() {
       setNotifications((prev) => prev.filter((notif) => notif.id !== id));
     }, 4000);
     if (manual) {
-      // Set cooldown for 10 minutes when manually dismissed
-      setCooldownUntil(Date.now() + 600000);
+      // Set cooldown for 1 second when manually dismissed
+      setCooldownUntil(Date.now() + 1000);
     }
   };
 
@@ -170,12 +170,13 @@ export default function NotificationSystem() {
   const addCartNotification = (
     productName: string,
     productId: string,
-    productImage?: string
+    productImage?: string,
+    customMessage?: string
   ) => {
     const notification: Notification = {
       id: `cart-${Date.now()}-${Math.random()}`,
       type: "cart",
-      message: "Added to cart successfully!",
+      message: customMessage || "Added to cart successfully!",
       productName,
       productId,
       productImage,

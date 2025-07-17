@@ -91,7 +91,7 @@ export default function HomePage() {
             </div>
             <div className="hidden lg:block">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="https://res.cloudinary.com/dkfmaqtpy/image/upload/v1752590255/feedpellet_hsxr7k.webp"
                 alt="Farm machinery"
                 width={200}
                 height={80}

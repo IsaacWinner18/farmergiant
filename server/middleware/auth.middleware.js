@@ -7,7 +7,7 @@ const authMiddleware = async (req, res, next) => {
     if (!token) {
       return res
         .status(401)
-        .json({ message: "Unauthorized, please log in", authenticated: false });
+        .json({ message: "Unauthorized, please log in", authenticated: true });
     }
 
     const user = jwt.verify(token, process.env.MY_SECRET);

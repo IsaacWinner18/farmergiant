@@ -7,6 +7,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -16,10 +17,16 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">FG</span>
               </div>
-              <span className="text-xl font-bold">FarmerGiant</span>
+              <span className="text-xl font-bold">FarmerGiant</span> */}
+              <Image
+                src="https://res.cloudinary.com/dkfmaqtpy/image/upload/v1742126454/photo_2025-03-16_12-57-47-removebg-preview_f3f3vv.png"
+                alt="Farmergiant logo"
+                width={80}
+                height={80}
+              />
             </div>
             <p className="text-green-100 mb-4 max-w-md">
               Your trusted partner for quality farm machinery and agricultural

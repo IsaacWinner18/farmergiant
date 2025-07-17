@@ -44,7 +44,7 @@ export default function RegisterPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/signup", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
